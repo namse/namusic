@@ -1,5 +1,5 @@
 import { FileInfo } from "../../type";
 
 export interface IFileSystemService {
-  readDirectoryAsync(directory: string): Promise<FileInfo[]>;
+  readDirectoryRecursivelyAsync(directory: string): Promise<FileInfo[]>;
 }

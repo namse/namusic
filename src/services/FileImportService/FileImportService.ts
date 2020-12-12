@@ -11,7 +11,7 @@ export class FileImportService implements IFileImportService {
   }
 
   async importAsync(directoryPath: string, extensions: string[]): Promise<FileInfo[]> {
-    const files = await this.fileSystemService.readDirectoryAsync(directoryPath);
+    const files = await this.fileSystemService.readDirectoryRecursivelyAsync(directoryPath);
 
     return files.filter(file => {
       return extensions.includes(path.extname(file.url));
